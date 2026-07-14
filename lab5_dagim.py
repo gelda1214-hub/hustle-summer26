@@ -69,22 +69,23 @@ def count_hype(likes, shares):
 send_vibe()
 welcome_user()
 show_mood()
-def final_message(): any
+def final_message():
 
 
 # BUG 6: make_shoutout returns a value, but nothing prints it.
 # Wrap this call in a print() so the shoutout shows on screen.
-def print(Jordan, creative):
+  print(make_shoutout("Jordan", "creative"))
 
 
 # BUG 7: this passes only ONE value, but make_shoutout needs TWO
- def print(make_shoutout("Alex, happy"))
+  print(make_shoutout("Alex", "happy"))
 
 
 # BUG 8: count_hype needs two numbers, but a word is being passed in.
 # Change "ten" to a number so the math works.
-print(count_hype("10", 5))
+print(count_hype(10, 5))
 
 
 def final_message():
     print("Thanks for using VibeCheck!")
+    final_message()
