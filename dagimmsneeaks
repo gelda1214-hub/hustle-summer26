@@ -1,0 +1,175 @@
+# ============================================================
+# LAB 7  -  MY OWN ORDERING APP
+# Week 7  -  Hack the Hood
+# ============================================================
+# Name: __Dagim________________
+#
+# This is YOUR app. YOU write the code.
+# Do the tickets IN ORDER from the Lab 7 sheet.
+# Run this file after EVERY ticket to check your work.
+#
+# My store sells: __Sneakers/slides______________________________________
+# ============================================================
+
+
+# ============================================================
+# DAY 1  -  BUILD YOUR ITEMS
+# ============================================================
+
+# TICKET 1: My item blueprint
+#   A class for your item. Every item has a name and a price.
+#   Write your class below.
+class Sneaker:
+   def __init__(self, name, price):
+    self.name = name
+    self.price = price
+
+
+# TICKET 3: The price guard
+#   Add a set_price method INSIDE your class above.
+#   It should say no to a price below zero.
+#   BREAK ON PURPOSE: after you build it, try item1.set_price(-5)
+#   PREDICT what happens: ______________
+#   Paste the message you see here: ______________
+# Prediction:
+# item1.set_price(-5) will print:
+# No! Price cannot be below zero.
+
+    item1.set_price(-5)
+
+
+    print(item1.name)
+    print(item1.price)
+
+# TICKET 4: A second kind of item
+#   A new class that copies (inherits from) your first class.
+#   Write it below.
+class Sneaker:
+    def __init__(self, name, price):
+        self.name = name
+        self.price = price
+
+    def set_price(self, amount):
+        if amount < 0:
+            print("No! Price cannot be below zero.")
+        else:
+            self.price = amount
+
+# New class that copies Sneaker
+class Slide(Sneaker):
+    pass
+
+# Create objects
+item1 = Sneaker("Air Max", 120)
+item2 = Slide("Crocs", 45)
+
+print(item1.name)
+print(item2.name)
+print(item2.price)
+
+
+# TICKET 5: Each item's own action
+#   Give each class its own method (deliver, serve, play...).
+#   Same method name, different message.
+#   EXPLAIN why the same name can do two things: ______________
+class Sneaker:
+    def __init__(self, name, price):
+        self.name = name
+        self.price = price
+
+    def deliver(self):
+        print("Delivering sneaker to the customer.")
+
+class Slide(Sneaker):
+    def deliver(self):
+        print("Delivering slide sandals to the customer.")
+
+
+item1 = Sneaker("Air Max", 120)
+item2 = Slide("Crocs", 45)
+
+item1.deliver()
+item2.deliver()
+
+# Explanation:
+# Both classes have a method named deliver().
+# Python calls the version that belongs to the object's class.
+# This is called method overriding (a type of polymorphism).
+
+# TICKET 2: Make your real items
+#   Make 2 or 3 real items with YOUR OWN names and prices.
+#   PREDICT what print(item1.name) shows: ______________
+item1 = Sneaker("Air Max", 120)
+item2 = Sneaker("Converse ", 65)
+item3 = Sneaker("Adidas", 180)
+
+# Prediction:
+# print(item1.name) will show: Air Max
+
+print(item1.name)
+print(item2.name)
+print(item3.name)
+
+
+# ============================================================
+# DAY 2  -  BUILD YOUR STORE
+# ============================================================
+
+# TICKET 6: My cart
+#   A class that holds items in a list and can check out.
+#   Write your Cart class below.
+class Cart:
+ def __init__(self):
+  self.items = []
+def add(self, item):
+ self.items.append(item)
+
+
+# TICKET 9: Checkout  (add this method INSIDE your Cart class)
+#   Deliver every item and add up the total.
+# Checkout
+ cart.checkout()
+
+# TICKET 7: My menu and my cart
+#   A dictionary that gives each item a number, and one empty cart.
+store = {
+    "1": item1,
+    "2": item2,
+    "3": item3
+}
+
+# Empty cart
+cart = Cart()
+
+
+# TICKET 8: Let customers shop
+#   Use input() and a loop to keep adding picks until "done".
+#   PREDICT what happens when you pick 1: ______________
+#Predict when one is clicked it will show air maxes
+choice = ""
+
+while choice != "done":
+    choice = input("Choose an item (1, 2, 3) or type 'done': ")
+
+    if choice == "done":
+        print("Finished shopping!")
+    else:
+        cart.add(store[choice])
+        print(store[choice].name, "added to your cart.")
+
+
+# TICKET 10: Test the whole app
+#   Run it start to finish. PREDICT the full output first,
+#   then check it against what really prints.
+
+#Air Max added to your cart.
+# Choose an item (1, 2, 3) or type 'done': 2
+# Crocs added to your cart.
+# Choose an item (1, 2, 3) or type 'done': done
+# Delivering sneaker: Air Max
+# Delivering slide: Adilette
+Total:  165
+
+# ============================================================
+# CHALLENGE: add a THIRD kind of item, or your own feature!
+# ============================================================
